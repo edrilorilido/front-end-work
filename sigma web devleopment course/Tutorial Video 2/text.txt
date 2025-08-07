@@ -1,0 +1,8 @@
+// #alert("welcome to your first website");
+
+let firstName = "baigan";
+console.log("his name is " + firstName);
+
+let x = 24;
+
+console.log(firstName + " is " + x + " years old")

@@ -1,0 +1,34 @@
+ctrl + / -> comment out any code
+
+alt + shift + down arrow key -> this replicate the line your on below
+
+pressing alt and hitting left click on mouse will give you more cursor where
+required
+
+<h1></h1>, <h2></h2>......<h6></h6> -> header tag
+
+<p></p> -> paragraph tag
+
+lorem23 -> will give a paragraph with 23 words
+
+lorem8 -> will give a paragrah with 8 words
+
+<p>Lorem ipsum dolor sit amet.</p> -> normal paragraph with some content
+
+<p style="background-color: red;">Lorem ipsum dolor sit amet.</p> -> paragraph with attribute
+style is atribute inside paragraph tag
+
+so adding some color using style as an attribute inside a paragraph tag in an
+.html file can also termed as in-line css, but the industry practice is to not use inline css, rather have all css properties in style.css file
+
+anchor tag: using an anchor tag you can add urls & links
+<a></a> -> this is what is called an anchor tag
+<a href="https://www.google.com">open google</a>
+
+<a target="_blank" href="https://www.google.com">open google</a>
+making use of target="_blank" in an anchor tag, when you click on the mentioned link that link will open up in a new web page
+
+In bookmrkmanager.html we simply used anchor tag because of which all the links came in sme line
+
+In bookmrkmngr.html we put the anchortags in paragraph tags which helped us see the links in  new line instead of a single line -> but this is not the correct approach to have different links in new line, instead we make use of something called as lists to have similar bunch of things in a new line
+
