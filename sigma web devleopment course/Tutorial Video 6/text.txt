@@ -1,0 +1,420 @@
+Tutorial 6: SEO & Core Web Vitals
+
+SEO -> Search Engine Optimization
+
+Let's say there're two web pages, both web page explains about dog food, but page 2 loads better and faster than page 1, hence google
+gives preference to page 1
+
+Core web vitals: There are three major Core Web Vitals
+
+1. CLS: Cumulative Layout Shift
+
+Cumulative Layout Shift (CLS) is a Core Web Vital metric from Google that measures visual stability of a webpage.
+
+👉 In simple terms: CLS tracks how much the visible elements of a webpage unexpectedly move around while it’s loading.
+A high CLS score means a bad user experience because things "jump around," and users may accidentally click the wrong button.
+
+
+---
+
+Formula:
+
+CLS = Impact fraction × Distance fraction
+
+Impact fraction → How much space the unstable element takes up in the viewport.
+
+Distance fraction → How far the element moves relative to the viewport.
+
+
+
+---
+
+Example:
+
+Imagine you’re opening a news website on your phone:
+
+1. The page loads a headline and some text. You’re about to click on "Read More".
+
+
+2. Suddenly, a banner ad loads above the headline, pushing the "Read More" button down.
+
+
+3. Your tap instead lands on an unintended link (maybe an ad), frustrating you.
+
+
+Visual Demo:
+
+Before Ad loads:
+
+[Headline Here]
+[Read More Button]  👆 You try to click
+
+After Ad loads:
+
+[Advertisement Banner]
+[Headline Here]
+[Read More Button]  👇 Button shifted down
+
+This unexpected shift of the button contributes to CLS.
+
+---
+
+CLS Score Ranges:
+
+Good: CLS ≤ 0.1
+
+Needs Improvement: 0.1 – 0.25
+
+Poor: CLS > 0.25
+
+---
+
+✅ How to Reduce CLS:
+
+Always set width and height attributes for images and videos.
+
+Reserve space for ads or dynamic content.
+
+Avoid inserting new UI elements above existing content.
+
+Use CSS aspect-ratio boxes.
+
+
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+2. LCP
+
+What is LCP (Largest Contentful Paint)?
+
+Largest Contentful Paint (LCP) is a metric that measures how long it takes for the largest visible element (like an image, heading, or video thumbnail) to appear on a web page.
+
+It reflects the moment when the main content of a page is visible to the user, so they feel the page has loaded.
+
+
+---
+
+📊 Google’s LCP Benchmarks
+
+Good: ≤ 2.5 seconds
+
+Needs Improvement: 2.5 – 4.0 seconds
+
+Poor: > 4.0 seconds
+
+
+
+---
+
+🖼 Real-Life Examples of LCP
+
+Example 1: News Website
+
+When you open a news site:
+
+A large headline (“Breaking News: …”) appears at the top.
+
+That headline is the LCP element because it’s the biggest piece of content the user sees first.
+
+
+If it shows up quickly → Good LCP.
+If the font loads late and you see a blank space first → Poor LCP.
+
+
+---
+
+Example 2: E-Commerce Store
+
+On an online store homepage:
+
+The big product image/banner at the top (e.g., “50% off new shoes”) is the LCP element.
+
+If that image is huge and takes time to download, the page feels slow.
+
+
+👉 Optimizing that hero image (compressing, preloading) makes LCP faster.
+
+
+---
+
+Example 3: Travel Booking Website
+
+On a travel site:
+
+The search box with a background photo of a beach is the largest visible element.
+
+That search section becomes the LCP.
+
+
+If the background photo loads late, users feel the page is still loading.
+
+
+---
+
+Example 4: Social Media Profile
+
+On a profile page:
+
+The cover photo at the top is usually the largest element.
+
+That cover photo is the LCP.
+
+
+If it’s optimized, the page feels fast. If not, users wait for it to appear.
+
+
+---
+
+✅ In short:
+
+LCP = when the biggest important thing is visible.
+
+It’s about user perception of loading speed, not just technical loading.
+
+The LCP element can be:
+
+A headline (text)
+
+A hero/cover image
+
+A video thumbnail
+
+A big section background
+
+
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+3. FID
+
+What is FID (First Input Delay)?
+
+First Input Delay (FID) measures the time between a user’s first interaction with a page (like clicking a button, tapping a link, or pressing a key) and the time the browser actually responds to that interaction.
+
+👉 In plain words: How long does it take for the page to start doing something when you try to interact with it?
+
+
+---
+
+📊 Google’s FID Benchmarks
+
+Good: ≤ 100 ms
+
+Needs Improvement: 100 – 300 ms
+
+Poor: > 300 ms
+
+
+
+---
+
+🖼 Real-Life Examples of FID
+
+Example 1: News Website
+
+You open a news site and click on a headline:
+
+If the browser is busy running heavy JavaScript (ads, analytics, etc.), there might be a delay before it opens the article.
+
+That waiting time is the FID.
+
+
+
+---
+
+Example 2: E-Commerce Store
+
+On an online shop homepage:
+
+You tap the “Add to Cart” button.
+
+If the button takes half a second to respond because the site is still loading scripts, that’s a Poor FID.
+
+
+
+---
+
+Example 3: Banking App Website
+
+On an online banking site:
+
+You click the login button after entering your credentials.
+
+If nothing happens for a moment because the browser is still processing background tasks, the FID is high.
+
+
+
+---
+
+Example 4: Social Media
+
+You tap “Like” on a post:
+
+If it highlights instantly → Good FID.
+
+If it takes a noticeable pause because the app is busy loading feeds or ads → Poor FID.
+
+
+
+---
+
+✅ In short:
+
+FID = delay between user action and page response.
+
+It’s about interactivity, not loading speed.
+
+Poor FID usually happens when JavaScript keeps the main thread busy, making the page feel unresponsive.
+
+
+
+---
+
+⚡ Fun way to remember:
+
+LCP = “When do I see the biggest thing?”
+
+FID = “When I tap/click, how quickly does the page react?”
+
+
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+Lighthouse Report:
+
+What is Lighthouse?
+
+Lighthouse is an open-source tool from Google that audits a web page for performance, accessibility, SEO, best practices, and Progressive Web App (PWA) standards.
+
+👉 In plain words: it’s like a health check-up for your website, showing you what’s good, what’s bad, and how to fix it.
+
+You can run it:
+
+In Chrome DevTools
+
+As a CLI tool
+
+Via PageSpeed Insights (which uses Lighthouse under the hood)
+
+
+
+---
+
+📊 What Lighthouse Measures (Categories)
+
+1. Performance → How fast the page loads and feels.
+
+
+2. Accessibility → How usable the page is for everyone, including people with disabilities.
+
+
+3. Best Practices → Checks for modern, secure coding practices.
+
+
+4. SEO → Whether the page is optimized for search engines.
+
+
+5. PWA → If the site is installable and works like an app.
+
+
+
+Each category gets a score from 0 to 100 (green = good, orange = needs improvement, red = poor).
+
+
+---
+
+🖼 Real-Life Examples of a Lighthouse Report
+
+Example 1: News Website
+
+Performance: 45 (slow hero images, lots of ads blocking rendering).
+
+Accessibility: 70 (headings missing alt text).
+
+Best Practices: 80 (uses HTTPS but has some outdated APIs).
+
+SEO: 92 (pretty good, but missing meta description).
+
+
+👉 Suggestion: Compress images, reduce ad scripts, add alt text.
+
+
+---
+
+Example 2: Online Shop
+
+Performance: 60 (big product images slow down LCP).
+
+Accessibility: 85 (buttons have good labels, but color contrast is low).
+
+Best Practices: 95 (secure and modern).
+
+SEO: 90 (structured data missing for products).
+
+
+👉 Suggestion: Preload product images, fix color contrast, add schema markup.
+
+
+---
+
+Example 3: Bank Website
+
+Performance: 75 (some blocking scripts but still okay).
+
+Accessibility: 95 (clear navigation and ARIA labels).
+
+Best Practices: 100 (everything secure, HTTPS strict).
+
+SEO: 80 (robots.txt issues).
+
+
+👉 Suggestion: Reduce heavy scripts, improve SEO metadata.
+
+
+---
+
+Example 4: Social Media Platform
+
+Performance: 40 (lots of JavaScript → poor FID).
+
+Accessibility: 65 (images missing alt text, small touch targets).
+
+Best Practices: 90 (secure, but has console errors).
+
+SEO: 85 (missing titles for some pages).
+
+
+👉 Suggestion: Optimize JS, add alt text, fix small buttons.
+
+
+---
+
+✅ In short:
+
+Lighthouse report = website’s report card.
+
+Covers speed, usability, security, SEO, and app-like features.
+
+Gives actionable suggestions to improve.
+
+
+
+---
+
+⚡ Easy memory trick:
+
+LCP = “When do I see the main thing?”
+
+FID = “When I click, does it respond?”
+
+CLS = “Does stuff jump around?”
+
+Lighthouse = “Overall health report card.”
+
+
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+
+
+

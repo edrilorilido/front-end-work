@@ -1,0 +1,94 @@
+reference url: https://www.codewithharry.com/tutorial/html-select-and-textarea
+
+1️⃣ What is an HTTP request?
+
+When you use a browser or app to interact with a website (like logging in, searching, uploading), your device sends a request to the website’s server asking it to do something.
+
+There are different “methods” to send these requests — the most common are GET and POST.
+
+2️⃣ GET request – “Just fetch me info”
+
+Think of a GET request as asking a librarian:
+
+“Can you please show me the book called Harry Potter?”
+
+You’re only asking for data, not giving anything secret.
+
+Everything you ask for is written on a “note” (which in tech is the URL).
+
+Example in daily life: Typing
+
+https://example.com/search?query=coffee
+
+
+→ This tells the server: “Hey, search for coffee.”
+
+Anyone who sees the URL can see what you asked for (because the query is visible in the address bar).
+
+💡 GET = Retrieve data, parameters visible in URL
+
+3️⃣ POST request – “Send info safely”
+
+A POST request is like filling out a form at the doctor’s office:
+
+“Here’s my name, age, medical history… please process it.”
+
+You’re sending data to the server — e.g., login details, payment info, file uploads.
+
+Your info isn’t written on the “envelope” (URL). It’s inside the body of the request, so it’s more private.
+
+Example: Submitting a login form:
+
+POST /login
+Content-Type: application/json
+
+{
+  "username": "shubham",
+  "password": "mySecret123"
+}
+
+
+→ Your username and password are sent behind the scenes.
+
+💡 POST = Send data to the server, details hidden from URL
+
+4️⃣ Side-by-side comparison
+Feature	GET	POST
+Purpose	Retrieve info	Send/create/update info
+Data location	URL (query string)	Request body
+Security & privacy	Less secure (data visible in browser history, server logs)	More secure (data not in URL, but still should be sent over HTTPS)
+Use cases	Searching, reading articles, viewing profiles	Login forms, file uploads, submitting feedback
+5️⃣ Quick analogy
+
+GET → “Show me the menu.” 🍽️
+
+POST → “Here’s my order. Please cook it.” 👨‍🍳
+
+------------------------------------
+
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label>
+
+radio button is a select button with either this or that logic
+
+<div></div> ----> using div tag you can separate the content in a new line
+
+------------------------------------
+
+The Textarea Element
+The textarea element is used when you need multiline text input from the user. This is particularly useful for comments, reviews, or any other type of input where the length is unpredictable.
+
+<textarea name="comment" rows="4" cols="50">
+      Enter your comment here...
+</textarea>
+
+The rows and cols attributes define the visible dimensions of the textarea.
+
+The Select Element
+The select element creates a dropdown menu for the user. It is useful when you have a predefined list of options for the user to choose from.
+
+<select name="fruits">
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+      <option value="cherry">Cherry</option>
+</select>

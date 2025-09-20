@@ -1,0 +1,181 @@
+html document link: https://www.codewithharry.com/tutorial/overview/html-home
+
+Image, lists & tables - Tutorial Video 5:
+
+windows key + left shift + s -> open snipping tool to take screenshot
+
+<img src="" alt="">
+above is the image in html, and src means the source from where the image will come, in src add the source/link/local_path from where the image will come
+
+example:
+<img src="darkseid.png" alt="darkseid image">
+
+the folder where index.html resides, that's where I put my darkseid.png image, so
+no local_path needs to be given, simply giving the image name does the trick
+
+src="" & alt="" are attributes in image tag
+
+now the purpose of alt="" attribute is, let's say instead of darkseid.png you gave
+some incorrect url/incorrect local_path, then no image will be displayed right, so having alt attribute allows us to give the image name, so for some reason if the image fails to display, the name of the image will be displayed.
+
+<img src="joker.png" alt="joker image">
+
+example: see the joker image tag, we did not mention the image source(we did mention the image name here, but this image does not exist where our index.html file resides, hence there's no image source), so only the image name is displayed(on our web page) which is coming from alt="joker image" attribute
+
+So the reason this alt="" attribute is needed, is if the imge fails to be displayed, then using this attribute the image name gets displayed and the user who has visited our site can know the name of the image and understand what could this image mean by the name that is being displayed.
+Example: the user can now know that - ok the image is not getting displayed but the name of the image is joker so as a user I can know that joker image was supposed to be visible here
+
+<img height="230" src="darkseid.png" alt="darkseid image">
+height="" is another attribute in image tag which can be used to adjust the height of the image. When using height attribute in image tag in html we do not need to mention pixel or px 
+
+table tag in html:
+
+discussion of table tag can be found in the html document link mentioned at the top of this text file
+
+__________
+xxxxxxxxxx -> row(horizontal)
+         x|                          
+         x|
+         x| 
+         x| 
+         x|
+         x|
+          |
+          v
+      column (vertical) 
+
+example:
+<table>
+  <tr> ---------------> tr block 1
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+
+  <tr> ---------------> tr block 2
+    <td>darkseid</td>
+    <td>150000</td>
+  </tr>
+</table>
+
+inside table we have two <tr></tr> block which means table rows, which signifies that what elements will exist in this table row. 
+
+---------------> tr block 1
+In this first table row block we have two elements which is Name & Age and these two elements are mentioned in another block i.e. <th></th> block which means table heading, basically what will be the heading of the table row.
+
+---------------> tr block 2
+In the second table row block we have two elements again which is darkseid & 150000 and these two elements are mentioned in another block i.e. <td></td> which means table data, basically what data will this table show under the heading of the table row on the web page
+
+if you want to add more data into the table you can simply keep on adding the data by adding the <tr></tr> block along with <td></td> block inside the 
+<table></table> block after <tr><th></th></tr>, for example:
+
+<table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Hobby</th>
+            <th>Home</th>
+        </tr>
+
+        <tr>
+            <td>joker</td>
+            <td>27</td>
+            <td>Being a menace to gotham city</td>
+            <td>gotham city</td>
+        </tr>
+</table>       
+
+also take a look at the index.html to see practical example 
+
+colspan:
+
+        <tr>
+            <td colspan="2">knull</td>
+            <td>200000</td>
+        </tr>
+
+so by adding colspan="" attribute we can determine how many column space our data can take. In this case the data- knull takes two column spaces because we have assigned colspan="2", so in the web page knull will take two column space and the next data 200000 will be visible after two column spaces
+
+        <tr>
+            <td colspan="2">knull</td>
+            <td rowspan="2">200000</td>
+        </tr>
+
+because of rwospan="2" attribute the 200000 data is occupying two rows on the web page
+
+We have made use of style.css to mark borders for our table to understand the concept of columns and rows
+
+caption tag in html:
+
+<table>
+        <caption>Supervillain Details</caption>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Hobby</th>
+            <th>Home</th>
+        </tr>
+
+caption tag basically acts as a heading for tables
+
+header footer in tables:(in the html document from codewithharry, mistakenly harry has put footer before body)
+
+<table>
+  <thead>
+    <!-- header content -->
+  </thead>
+  <tbody>
+    <!-- body content -->
+  </tbody>
+  <tfooter>
+    <!-- footer content -->
+  </tfooter>
+</table>
+
+tbody - table body
+thead -  table header
+tfooter - table foot
+
+<br> is bsically line break tag, it acts similar to /ln in c++ programming language, basiclly start from a new line and give space
+
+lists in html: <li></li>
+Our day-to-day lives often involve the use of lists. For example, when we go shopping, the bill we receive includes a list of all the items we've purchased. In a similar manner, web developers use lists to neatly display data on websites.
+
+types of list:
+i. unordered list - Displays items using bullets. <ul></ul>
+ii. ordered list - Displays items in a numerical sequence, and supports various numbering styles like Arabic numerals, Roman numerals, and so on. <ol></ol>
+iii. definition list - Organizes items in a format similar to a dictionary, with terms and their corresponding definitions. <dl></dl>
+
+unordered list example:
+
+    <ul>
+        <li>harry</li>
+        <li>rohan</li>
+        <li>shubham</li>
+    </ul>
+
+output on web page:
+
+harry
+rohan
+shubham
+
+in above output harry, rohan & shubham will appear with bullet points as well, we could not add the bullet point here, its not allowing.
+
+ordered list example:
+
+    <ol>
+        <li>harry</li>
+        <li>rohan</li>
+        <li>shubham</li>
+    </ol>
+
+output on web page:
+
+1. harry
+2. rohan
+3. shubham
+
+output of the ordered list appeared with numerical numbers
+
+Next we have definition list, although it's very less used, but it's important from interview's perspective.
+

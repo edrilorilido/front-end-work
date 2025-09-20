@@ -1,0 +1,16 @@
+reference material: https://www.codewithharry.com/tutorial/html-inline-elements
+
+<p></p> -----> paragraph tag is block element
+<div></div> ----> block element
+
+<a href=""></a> ----> inline element
+<span></span> ----> inline element
+<label></label> ----> inline element
+<input> ----> inline element
+<button type="submit">Submit</button> ----> inline element
+
+
+block element takes the entire space in the width/line, where as inline element take only the space which contains some text or some form of data, they will not exceed the space more than required which is not the case with block element
+
+
+
